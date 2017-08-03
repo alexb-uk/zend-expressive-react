@@ -1,5 +1,13 @@
-<?php $this->headTitle('React'); ?>
+<?php
+$this->headTitle('React');
 
-<h1>React Test Page</h1>
+$this->inlineScript()->appendFile(
+    '/js/reactApp.js',
+    'text/javascript',
+    ['defer' => true]
+);
+?>
+
+<h1>React Test Page:</h1>
 
 <div id="root">Root Div</div>
