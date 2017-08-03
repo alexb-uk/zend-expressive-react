@@ -28,3 +28,5 @@
 
 $app->get('/', App\Action\HomePageAction::class, 'home');
 $app->get('/api/ping', App\Action\PingAction::class, 'api.ping');
+
+$app->get('/react', App\Action\ReactAction::class, 'react');
