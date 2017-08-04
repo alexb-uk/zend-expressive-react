@@ -1,6 +1,4 @@
-// __tests__/Helloworld-test.js
-
-/* eslint-disable no-unused-vars */
+// __tests__/helloworld.test.jsx
 
 import React from 'react';
 import renderer from 'react-test-renderer';

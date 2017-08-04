@@ -8,6 +8,12 @@ var APP_DIR = path.resolve(__dirname, 'src/App/js');
 
 module.exports = {
   entry: APP_DIR + '/reactApp.jsx',
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+    'react-addons-test-utils': 'react-dom',
+  },
   output: {
     path: BUILD_DIR,
     filename: 'reactApp.js'
