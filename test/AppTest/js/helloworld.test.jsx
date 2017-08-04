@@ -1,12 +1,12 @@
 // __tests__/helloworld.test.jsx
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Helloworld from '../../../src/App/js/components/helloworld';
+import React from "react";
+import renderer from "react-test-renderer";
+import Helloworld from "../../../src/App/js/components/helloworld";
 
-test('Helloworld element', () => {
+test("Helloworld element", () => {
   const component = renderer.create(
-    <Helloworld date={new Date('2001/02/03 01:20:30')}/>
+    <Helloworld date={new Date("2001/02/03 01:20:30")}/>
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default class Helloworld extends React.Component {
 
@@ -25,3 +26,7 @@ export default class Helloworld extends React.Component {
         );
     }
 }
+
+Helloworld.propTypes = {
+  date: PropTypes.instanceOf(Date)
+};

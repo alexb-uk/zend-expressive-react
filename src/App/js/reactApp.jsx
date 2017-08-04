@@ -1,7 +1,7 @@
-import Helloworld from './components/helloworld.jsx';
+import Helloworld from "./components/helloworld.jsx";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 $( document ).ready(function() {
     ReactDOM.render(
