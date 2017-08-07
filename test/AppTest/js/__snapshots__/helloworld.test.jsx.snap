@@ -7,7 +7,7 @@ exports[`Helloworld element 1`] = `
   </h1>
   <h2>
     It is 
-    1:20:30 AM
+    01:20:30
      precisely!
   </h2>
   Likes : 
