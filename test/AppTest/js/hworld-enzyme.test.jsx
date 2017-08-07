@@ -14,7 +14,7 @@ describe("<Helloworld />", () => {
   });
 
   it("renders time <h2> component", () => {
-    const testDate = new Date("2001/02/03 01:20:30");
+    const testDate = new Date("1999/02/03 01:20:30");
     const wrapper  = shallow(<Helloworld date={testDate} />);
     const time     = <h2>It is {testDate.toLocaleTimeString()} precisely!</h2>;
 
