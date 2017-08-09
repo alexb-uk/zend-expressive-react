@@ -5,21 +5,32 @@ import {shallow} from "enzyme";
 import Square from "../../../src/App/js/components/square";
 
 describe("<Square />", () => {
-    it("renders <Square /> component", () => {
+    const myMock = jest.fn();
+
+    it("renders empty <Square /> component", () => {
         const component = renderer.create(
-            <Square value={1}/>
+            <Square value={null} onClick={() => myMock()}/>
+        );
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it("renders filled <Square /> component", () => {
+        const component = renderer.create(
+            <Square value={"X"} onClick={() => myMock()}/>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
     it("Player 1 move", () => {
-        const wrapper = shallow(<Square/>);
+        const myMock = jest.fn();
+        const wrapper = shallow(<Square value={null} onClick={() => myMock()}/>);
 
         // Initial state
         expect(wrapper.text()).toEqual("");
 
         wrapper.simulate("click");
-        expect(wrapper.text()).toEqual("X");
+        expect(myMock.mock.calls.length).toBe(1);
     });
 });

@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Square /> renders <Square /> component 1`] = `
+exports[`<Square /> renders empty <Square /> component 1`] = `
 <button
   className="square"
   onClick={[Function]}
 />
+`;
+
+exports[`<Square /> renders filled <Square /> component 1`] = `
+<button
+  className="square"
+  onClick={[Function]}
+>
+  X
+</button>
 `;
