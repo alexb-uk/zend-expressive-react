@@ -5,7 +5,7 @@ exports[`<Board /> <Board /> component handles clicks 1`] = `
   <div
     className="status"
   >
-    Next player: X
+    Next player: O
   </div>
   <div
     className="board-row"

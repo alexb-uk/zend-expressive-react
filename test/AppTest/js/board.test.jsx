@@ -38,5 +38,12 @@ describe("<Board />", () => {
         square.simulate("click");
         expect(wrapper.state().squares[0]).toBe("X");
         expect(wrapper.state().squares[1]).toBe(null);
+
+        const secondSquare  = wrapper.find(Square).at(1);
+
+        secondSquare.simulate("click");
+        expect(wrapper.state().squares[0]).toBe("X");
+        expect(wrapper.state().squares[1]).toBe("O");
+        expect(wrapper.state().squares[2]).toBe(null);
     });
 });
