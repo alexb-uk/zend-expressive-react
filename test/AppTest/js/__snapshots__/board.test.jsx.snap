@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Board /> renders <Board /> component 1`] = `
+<div>
+  <div
+    className="status"
+  >
+    Next player: X
+  </div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
