@@ -1,0 +1,14 @@
+<?php
+$this->headTitle('Tic Tac Toe');
+
+$this->headLink()
+    ->prependStylesheet('/css/tictactoe.css');
+
+$this->inlineScript()->appendFile(
+    '/js/tictactoeApp.js',
+    'text/javascript',
+    ['defer' => true]
+);
+?>
+
+<div id="root">Root Div</div>
