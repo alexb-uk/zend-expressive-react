@@ -37,7 +37,6 @@ describe("<Board />", () => {
         expect(myMock.mock.calls.length).toBe(2);
     });
 
-    // Enzyme testing
     it("<Board /> component handles clicks - Enzyme", () => {
         const myMock  = jest.fn();
         const squares = new Array(9).fill(null);

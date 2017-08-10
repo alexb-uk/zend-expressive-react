@@ -33,8 +33,7 @@ describe("<Game />", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    // Enzyme testing complete game
-    it("Player O wins game - Enzyme", () => {
+    it("Player O wins <Game /> - Enzyme", () => {
         const wrapper = shallow(<Game />);
 
         expect(getGameStatus(wrapper)).toEqual("Next player: X");
@@ -42,13 +41,13 @@ describe("<Game />", () => {
         wrapper.instance().handleClick(0);
 
         expect(getGameStatus(wrapper)).toEqual("Next player: O");
-        let lastHistory = wrapper.state("history").slice(-1)[0]["squares"];
+        let lastHistory = getLastMove(wrapper);
         expect(lastHistory[0]).toEqual("X");
 
         wrapper.instance().handleClick(3);
 
         expect(getGameStatus(wrapper)).toEqual("Next player: X");
-        lastHistory = wrapper.state("history").slice(-1)[0]["squares"];
+        lastHistory = getLastMove(wrapper);
         expect(lastHistory[3]).toEqual("O");
 
         wrapper.instance().handleClick(1);
@@ -59,8 +58,46 @@ describe("<Game />", () => {
         expect(getGameStatus(wrapper)).toEqual("Winner: O");
     });
 
+    it("time travel <Game /> history - Enzyme", () => {
+        const wrapper = shallow(<Game />);
+
+        wrapper.instance().handleClick(0);
+        wrapper.instance().handleClick(3);
+        wrapper.instance().handleClick(1);
+        wrapper.instance().handleClick(4);
+
+        let lastMove = getLastMove(wrapper);
+        expect(lastMove[0]).toEqual("X");
+        expect(lastMove[3]).toEqual("O");
+        expect(lastMove[1]).toEqual("X");
+        expect(lastMove[4]).toEqual("O");
+
+        expect(getGameStatus(wrapper)).toEqual("Next player: X");
+
+        wrapper.instance().jumpTo(1);
+        expect(getGameStatus(wrapper)).toEqual("Next player: O");
+
+        wrapper.instance().jumpTo(2);
+        expect(getGameStatus(wrapper)).toEqual("Next player: X");
+
+        wrapper.instance().handleClick(2);
+
+        lastMove = getLastMove(wrapper);
+        expect(lastMove[0]).toEqual("X");
+        expect(lastMove[3]).toEqual("O");
+        expect(lastMove[2]).toEqual("X");
+        expect(lastMove[4]).toEqual(null);
+        expect(lastMove[1]).toEqual(null);
+
+        expect(getGameStatus(wrapper)).toEqual("Next player: O");
+    });
+
 });
 
 function getGameStatus(wrapper) {
     return wrapper.find(".game-info").children().first().text();
+}
+
+function getLastMove(wrapper) {
+    return wrapper.state("history").slice(-1)[0]["squares"];
 }
