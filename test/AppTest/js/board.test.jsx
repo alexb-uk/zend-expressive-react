@@ -20,8 +20,7 @@ describe("<Board />", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    // Snapshot testing complete game
-    it("Player X wins game", () => {
+    it("<Board /> component handles clicks", () => {
         const myMock = jest.fn();
         const component = renderer.create(
             <Board
@@ -32,52 +31,10 @@ describe("<Board />", () => {
         let tree = component.toJSON();
 
         tree.children[1].children[0].props.onClick();
+        expect(myMock.mock.calls.length).toBe(1);
+
         tree.children[2].children[0].props.onClick();
-        tree.children[1].children[1].props.onClick();
-
-        // re-rendering
-        tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-
-        tree.children[2].children[1].props.onClick();
-        tree.children[1].children[2].props.onClick();
-
-        // re-rendering
-        tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-
-        tree.children[2].children[2].props.onClick();
-        // re-rendering
-        tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-
-    // Snapshot testing complete game
-    it("Player O wins game", () => {
-        const myMock = jest.fn();
-        const component = renderer.create(
-            <Board
-                squares={emptySquares}
-                onClick={(i) => myMock(i)}
-            />
-        );
-        let tree = component.toJSON();
-
-        tree.children[1].children[0].props.onClick();
-        tree.children[2].children[0].props.onClick();
-        tree.children[1].children[1].props.onClick();
-
-        // re-rendering
-        tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-
-        tree.children[2].children[1].props.onClick();
-        tree.children[3].children[0].props.onClick();
-        tree.children[2].children[2].props.onClick();
-
-        // re-rendering
-        tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
+        expect(myMock.mock.calls.length).toBe(2);
     });
 
     // Enzyme testing
@@ -99,19 +56,4 @@ describe("<Board />", () => {
         expect(myMock.mock.calls.length).toBe(2);
     });
 
-    // Enzyme testing complete game
-    it("Player O wins game - Enzyme", () => {
-        const wrapper = shallow(<Board />);
-
-        expect(wrapper.find(".status").text()).toEqual("Next player: X");
-
-        wrapper.find(Square).at(0).simulate("click");
-        wrapper.find(Square).at(3).simulate("click");
-        wrapper.find(Square).at(1).simulate("click");
-        wrapper.find(Square).at(4).simulate("click");
-        wrapper.find(Square).at(8).simulate("click");
-        wrapper.find(Square).at(5).simulate("click");
-
-        expect(wrapper.find(".status").text()).toEqual("Winner: O");
-    });
 });
