@@ -1,87 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Board /> <Board /> component handles clicks 1`] = `
-<div>
-  <div
-    className="status"
-  >
-    Next player: O
-  </div>
-  <div
-    className="board-row"
-  >
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      X
-    </button>
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-  </div>
-  <div
-    className="board-row"
-  >
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-  </div>
-  <div
-    className="board-row"
-  >
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-    <button
-      className="square"
-      onClick={[Function]}
-    />
-  </div>
-</div>
-`;
-
 exports[`<Board /> Player O wins game 1`] = `
 <div>
   <div
-    className="status"
-  >
-    Next player: O
-  </div>
-  <div
     className="board-row"
   >
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -93,9 +24,7 @@ exports[`<Board /> Player O wins game 1`] = `
     <button
       className="square"
       onClick={[Function]}
-    >
-      O
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -197,25 +126,16 @@ exports[`<Board /> Player O wins game 2`] = `
 exports[`<Board /> Player X wins game 1`] = `
 <div>
   <div
-    className="status"
-  >
-    Next player: O
-  </div>
-  <div
     className="board-row"
   >
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -227,9 +147,7 @@ exports[`<Board /> Player X wins game 1`] = `
     <button
       className="square"
       onClick={[Function]}
-    >
-      O
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -261,9 +179,20 @@ exports[`<Board /> Player X wins game 1`] = `
 exports[`<Board /> Player X wins game 2`] = `
 <div>
   <div
-    className="status"
+    className="board-row"
   >
-    Winner: X
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
   </div>
   <div
     className="board-row"
@@ -271,37 +200,11 @@ exports[`<Board /> Player X wins game 2`] = `
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      X
-    </button>
-  </div>
-  <div
-    className="board-row"
-  >
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      O
-    </button>
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      O
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -329,9 +232,20 @@ exports[`<Board /> Player X wins game 2`] = `
 exports[`<Board /> Player X wins game 3`] = `
 <div>
   <div
-    className="status"
+    className="board-row"
   >
-    Winner: X
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
   </div>
   <div
     className="board-row"
@@ -339,37 +253,11 @@ exports[`<Board /> Player X wins game 3`] = `
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
-    >
-      X
-    </button>
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      X
-    </button>
-  </div>
-  <div
-    className="board-row"
-  >
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      O
-    </button>
-    <button
-      className="square"
-      onClick={[Function]}
-    >
-      O
-    </button>
+    />
     <button
       className="square"
       onClick={[Function]}
@@ -396,11 +284,6 @@ exports[`<Board /> Player X wins game 3`] = `
 
 exports[`<Board /> renders <Board /> component 1`] = `
 <div>
-  <div
-    className="status"
-  >
-    Next player: X
-  </div>
   <div
     className="board-row"
   >

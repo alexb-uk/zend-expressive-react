@@ -9,11 +9,6 @@ exports[`<Game /> renders <Game /> component 1`] = `
   >
     <div>
       <div
-        className="status"
-      >
-        Next player: X
-      </div>
-      <div
         className="board-row"
       >
         <button
@@ -66,7 +61,9 @@ exports[`<Game /> renders <Game /> component 1`] = `
   <div
     className="game-info"
   >
-    <div />
+    <div>
+      Next player: X
+    </div>
     <ol />
   </div>
 </div>
