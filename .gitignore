@@ -7,3 +7,4 @@ phpunit.xml
 node_modules/
 public/js
 vendor/
+/.project
