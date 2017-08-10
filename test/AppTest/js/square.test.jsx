@@ -23,7 +23,7 @@ describe("<Square />", () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it("Player 1 move", () => {
+    it("test <Square /> click event", () => {
         const myMock = jest.fn();
         const wrapper = shallow(<Square value={null} onClick={() => myMock()}/>);
 

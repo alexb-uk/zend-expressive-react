@@ -13,21 +13,41 @@ describe("<Game />", () => {
         expect(tree).toMatchSnapshot();
     });
 
+    it("<Game /> history is recorded", () => {
+        const component = renderer.create(
+            <Game />
+        );
+        let tree = component.toJSON();
+
+        const rows = tree.children[0].children[0].children;
+        const row1 = rows[0].children;
+
+        row1[0].props.onClick();
+
+        tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+
+        row1[2].props.onClick();
+
+        tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
     // Enzyme testing complete game
     it("Player O wins game - Enzyme", () => {
         const wrapper = shallow(<Game />);
 
-        expect(wrapper.find(".game-info").text()).toEqual("Next player: X");
+        expect(getGameStatus(wrapper)).toEqual("Next player: X");
 
         wrapper.instance().handleClick(0);
 
-        expect(wrapper.find(".game-info").text()).toEqual("Next player: O");
+        expect(getGameStatus(wrapper)).toEqual("Next player: O");
         let lastHistory = wrapper.state("history").slice(-1)[0]["squares"];
         expect(lastHistory[0]).toEqual("X");
 
         wrapper.instance().handleClick(3);
 
-        expect(wrapper.find(".game-info").text()).toEqual("Next player: X");
+        expect(getGameStatus(wrapper)).toEqual("Next player: X");
         lastHistory = wrapper.state("history").slice(-1)[0]["squares"];
         expect(lastHistory[3]).toEqual("O");
 
@@ -36,7 +56,11 @@ describe("<Game />", () => {
         wrapper.instance().handleClick(8);
         wrapper.instance().handleClick(5);
 
-        expect(wrapper.find(".game-info").text()).toEqual("Winner: O");
+        expect(getGameStatus(wrapper)).toEqual("Winner: O");
     });
 
 });
+
+function getGameStatus(wrapper) {
+    return wrapper.find(".game-info").children().first().text();
+}
