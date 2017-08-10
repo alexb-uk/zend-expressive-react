@@ -66,6 +66,13 @@ exports[`<Game /> <Game /> history is recorded 1`] = `
     <div>
       Next player: O
     </div>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        Toggle Order
+      </button>
+    </div>
     <ol>
       <li>
         <a
@@ -157,6 +164,13 @@ exports[`<Game /> <Game /> history is recorded 2`] = `
   >
     <div>
       Next player: X
+    </div>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        Toggle Order
+      </button>
     </div>
     <ol>
       <li>
@@ -254,6 +268,13 @@ exports[`<Game /> renders <Game /> component 1`] = `
   >
     <div>
       Next player: X
+    </div>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        Toggle Order
+      </button>
     </div>
     <ol>
       <li>

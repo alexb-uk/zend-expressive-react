@@ -7,10 +7,12 @@ export default class Game extends React.Component {
         this.state = {
             history: [{
                 squares: new Array(9).fill(null),
+                moveIndex: 0,
                 currentMove: null
             }],
             stepNumber: 0,
             xIsNext: true,
+            moveHistoryOrder: true,
         };
     }
 
@@ -25,7 +27,8 @@ export default class Game extends React.Component {
         this.setState({
             history: history.concat([{
                 squares: squares,
-                currentMove: i
+                currentMove: i,
+                moveIndex: history.length
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
@@ -39,18 +42,30 @@ export default class Game extends React.Component {
         });
     }
 
+    setMoveOrder() {
+        this.setState({
+            moveHistoryOrder: !this.state.moveHistoryOrder,
+        });
+    }
+
     render() {
-        const history = this.state.history;
+        const history = this.state.history.slice(0);
         const current = history[this.state.stepNumber];
         const winner  = calculateWinner(current.squares);
         const stepNumber = this.state.stepNumber;
 
+        if (this.state.moveHistoryOrder === false) {
+            history.reverse();
+        }
+
         const moves = history.map((step, move) => {
             const column = (step["currentMove"] % 3) + 1;
             const row    = Math.floor((step["currentMove"] / 3) + 1);
-            const desc = move ?
-                "Move #" + move + " - (" + column + "," + row + ")" :
+
+            const desc = step["moveIndex"] ?
+                "Move #" + step["moveIndex"] + " - (" + column + "," + row + ")" :
                 "Game start";
+
             return (
                 <li key={move}>
                     <a href="#"
@@ -78,6 +93,11 @@ export default class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
+                    <div>
+                        <button onClick={() => this.setMoveOrder()}>
+                            Toggle Order
+                        </button>
+                    </div>
                     <ol>{moves}</ol>
                 </div>
             </div>
