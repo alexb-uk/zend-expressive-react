@@ -69,6 +69,7 @@ exports[`<Game /> <Game /> history is recorded 1`] = `
     <ol>
       <li>
         <a
+          className=""
           href="#"
           onClick={[Function]}
         >
@@ -77,6 +78,7 @@ exports[`<Game /> <Game /> history is recorded 1`] = `
       </li>
       <li>
         <a
+          className="selected"
           href="#"
           onClick={[Function]}
         >
@@ -159,6 +161,7 @@ exports[`<Game /> <Game /> history is recorded 2`] = `
     <ol>
       <li>
         <a
+          className=""
           href="#"
           onClick={[Function]}
         >
@@ -167,6 +170,7 @@ exports[`<Game /> <Game /> history is recorded 2`] = `
       </li>
       <li>
         <a
+          className=""
           href="#"
           onClick={[Function]}
         >
@@ -175,6 +179,7 @@ exports[`<Game /> <Game /> history is recorded 2`] = `
       </li>
       <li>
         <a
+          className="selected"
           href="#"
           onClick={[Function]}
         >
@@ -253,6 +258,7 @@ exports[`<Game /> renders <Game /> component 1`] = `
     <ol>
       <li>
         <a
+          className="selected"
           href="#"
           onClick={[Function]}
         >

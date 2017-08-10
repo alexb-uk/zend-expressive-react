@@ -43,6 +43,7 @@ export default class Game extends React.Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner  = calculateWinner(current.squares);
+        const stepNumber = this.state.stepNumber;
 
         const moves = history.map((step, move) => {
             const column = (step["currentMove"] % 3) + 1;
@@ -52,7 +53,10 @@ export default class Game extends React.Component {
                 "Game start";
             return (
                 <li key={move}>
-                    <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+                    <a href="#"
+                       onClick={() => this.jumpTo(move)}
+                       className={(stepNumber === move) ? "selected" : ""}
+                    >{desc}</a>
                 </li>
             );
         });
